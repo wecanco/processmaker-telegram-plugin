@@ -1,12 +1,12 @@
 {
-    "name": "processmaker/telegram-plugin",
+    "name": "wecanco/processmaker-telegram-plugin",
     "description": "ProcessMaker plugin for Telegram notifications with inline actions",
     "type": "processmaker-plugin",
     "license": "MIT",
     "authors": [
         {
-            "name": "Your Name",
-            "email": "your.email@example.com"
+            "name": "WeCanCo",
+            "email": "info@wecan-co.ir"
         }
     ],
     "require": {
