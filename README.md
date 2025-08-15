@@ -24,7 +24,7 @@ A ProcessMaker plugin that sends task notifications to Telegram with inline acti
 1. Add the package to your ProcessMaker installation:
 
 ```bash
-composer require processmaker/telegram-plugin
+composer require wecanco/processmaker-telegram-plugin
 ```
 2.	Publish the configuration:
 
