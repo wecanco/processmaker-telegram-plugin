@@ -21,14 +21,9 @@ class SetupTelegramWebhook extends Command
 
     protected TelegramService $telegram;
 
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
     public function handle(): int
     {
-        $this->telegram = $this->laravel->make(TelegramService::class);
+        $this->telegram = new TelegramService(config('telegram.bot_token', ''));
 
         $action = $this->argument('action');
 

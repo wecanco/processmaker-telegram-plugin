@@ -28,8 +28,8 @@ class TelegramService
         $this->client = new Client([
             'base_uri' => $this->baseUrl . $this->botToken . '/',
             'timeout' => $this->config['notifications']['timeout'] ?? 30,
-            'connect_timeout' => 10,
-            'verify' => true,
+            'connect_timeout' => 15,
+            'verify' => false,
             'headers' => [
                 'User-Agent' => 'ProcessMaker-Telegram-Plugin/1.0'
             ]
@@ -190,6 +190,7 @@ class TelegramService
     {
         $maxRetries = $this->config['notifications']['retry_attempts'] ?? 3;
         $attempt = 0;
+        $response = false;
 
         while ($attempt < $maxRetries) {
             try {
@@ -234,7 +235,16 @@ class TelegramService
                 return $result;
 
             } catch (RequestException $e) {
-                $statusCode = $e->getResponse() ? $e->getResponse()->getStatusCode() : 0;
+                $_response = $e->getResponse();
+                $statusCode = 0;
+                if ($_response) {
+                    $statusCode = $_response->getStatusCode();
+                    try {
+                        $response = json_decode($_response->getBody()->getContents(), true);
+                    } catch (\Throwable $e) {
+
+                    }
+                }
 
                 Log::error("Telegram API request failed: " . $e->getMessage(), [
                     'endpoint' => $endpoint,
@@ -250,7 +260,6 @@ class TelegramService
                         continue;
                     }
                 }
-
                 break;
 
             } catch (GuzzleException $e) {
@@ -262,7 +271,7 @@ class TelegramService
             }
         }
 
-        return false;
+        return $response;
     }
 
     /**

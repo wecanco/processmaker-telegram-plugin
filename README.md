@@ -50,14 +50,14 @@ Add to your `.env`:
 
 ```ini
 TELEGRAM_BOT_TOKEN=your_bot_token
-TELEGRAM_BOT_USERNAME=your_bot_username
+TELEGRAM_DEFAULT_CHAT_ID=your_bot_username
 TELEGRAM_WEBHOOK_URL=https://yourdomain.com/telegram/webhook
 ```
 
 Set up the webhook:
 
 ```bash
-php artisan telegram:setup-webhook
+php artisan telegram:webhook set
 ```
 
 ## Usage

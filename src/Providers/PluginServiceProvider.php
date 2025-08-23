@@ -108,6 +108,10 @@ class PluginServiceProvider extends ServiceProvider
                 config('telegram.base_url', 'https://api.telegram.org/bot')
             );
         });
+//        $this->app->singleton(TelegramService::class, function ($app) {
+//            $botToken = config('telegram.bot_token');
+//            return new TelegramService($botToken);
+//        });
 
 //        $this->app->singleton(TelegramService::class, function ($app) {
 //            return new TelegramService(
@@ -127,10 +131,10 @@ class PluginServiceProvider extends ServiceProvider
             ]);
         }
 
-        // Bind the service in container
-        $this->app->bind('ProcessMaker\TelegramPlugin\Services\TelegramService', function ($app) {
-            return $app->make(TelegramService::class);
-        });
+//        // Bind the service in container
+//        $this->app->bind('ProcessMaker\TelegramPlugin\Services\TelegramService', function ($app) {
+//            return $app->make(TelegramService::class);
+//        });
     }
 
     /**

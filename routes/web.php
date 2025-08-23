@@ -11,7 +11,7 @@ use ProcessMaker\TelegramPlugin\Controllers\TelegramBotController;
 */
 
 // User authentication routes (protected)
-Route::middleware(['auth', 'web'])->prefix('profile')->name('telegram.')->group(function () {
+Route::middleware(['web', 'auth'])->prefix('profile')->name('telegram.')->group(function () {
     Route::get('/telegram', [TelegramAuthController::class, 'show'])->name('show');
     Route::post('/telegram/connect', [TelegramAuthController::class, 'connect'])->name('connect');
     Route::post('/telegram/disconnect', [TelegramAuthController::class, 'disconnect'])->name('disconnect');
