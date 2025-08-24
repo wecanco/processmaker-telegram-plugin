@@ -47,7 +47,7 @@ return [
     | Default settings for chat notifications
     |
     */
-    'default_chat_id' => env('TELEGRAM_DEFAULT_CHAT_ID', ''),
+    'bot_username' => env('TELEGRAM_BOT_USERNAME', ''),
 
     /*
     |--------------------------------------------------------------------------

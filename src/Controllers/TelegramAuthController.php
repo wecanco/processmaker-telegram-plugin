@@ -33,7 +33,8 @@ class TelegramAuthController extends Controller
             'user' => $user,
             'isConnected' => !empty($user->telegram_chat_id),
             'connectedAt' => $user->telegram_verified_at,
-            'botUsername' => $this->getBotUsername(),
+//            'botUsername' => $this->getBotUsername(),
+            'botUsername' => config('telegram.bot_username'),
         ];
 
         // Generate auth token if not connected

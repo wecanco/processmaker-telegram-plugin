@@ -161,7 +161,7 @@
                                                         <div class="step-content">
                                                             <h6>{{ __('Open Telegram') }}</h6>
                                                             <p class="text-muted mb-2">{{ __('Click the button below to open our ProcessMaker bot in Telegram') }}</p>
-                                                            <a href="https://t.me/{{ $botUsername }}"
+                                                            <a href="https://t.me/{{ $botUsername }}?start={{ $authToken }}"
                                                                class="btn btn-primary"
                                                                target="_blank">
                                                                 <i class="fab fa-telegram-plane mr-2"></i>
@@ -205,13 +205,18 @@
                                                 </div>
 
                                                 <div class="mt-3">
-                                                    <form method="POST" action="{{ route('telegram.regenerate-token') }}" class="d-inline">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-outline-secondary btn-sm">
-                                                            <i class="fas fa-sync-alt mr-1"></i>
-                                                            {{ __('Generate New Token') }}
-                                                        </button>
-                                                    </form>
+                                                    <a href="" class="btn btn-outline-secondary btn-sm">
+                                                        <i class="fas fa-sync-alt mr-1"></i>
+                                                        {{ __('Refresh & Generate New Token') }}
+                                                    </a>
+
+{{--                                                    <form method="POST" action="{{ route('telegram.regenerate-token') }}" class="d-inline">--}}
+{{--                                                        @csrf--}}
+{{--                                                        <button type="submit" class="btn btn-outline-secondary btn-sm">--}}
+{{--                                                            <i class="fas fa-sync-alt mr-1"></i>--}}
+{{--                                                            {{ __('Generate New Token') }}--}}
+{{--                                                        </button>--}}
+{{--                                                    </form>--}}
                                                 </div>
                                             @else
                                                 <div class="alert alert-warning">
@@ -358,7 +363,7 @@
         }
 
         // Start checking after 10 seconds
-        setTimeout(startConnectionCheck, 10000);
+        // setTimeout(startConnectionCheck, 10000);
 
         // Clean up on page unload
         window.addEventListener('beforeunload', () => {
