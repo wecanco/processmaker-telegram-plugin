@@ -53,7 +53,7 @@ TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_BOT_USERNAME=your_bot_username
 TELEGRAM_WEBHOOK_URL=https://yourdomain.com/telegram/webhook
 ```
-[User.php](../processmaker/ProcessMaker/Models/User.php)
+
 Set up the webhook:
 
 ```bash
