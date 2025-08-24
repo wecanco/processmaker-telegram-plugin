@@ -79,7 +79,7 @@ class User extends Authenticatable implements HasMedia
 ## Usage
 
 ### For Users
-1. Navigate to your profile in ProcessMaker
+1. Navigate to your profile in ProcessMaker (/profile/telegram)
 2. Click "Connect Telegram Account"
 3. Start a chat with your bot in Telegram
 4. Send the provided authentication token
