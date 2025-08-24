@@ -107,12 +107,12 @@
                                             <h6 class="card-title">{{ __('Connected Account') }}</h6>
                                             <p class="card-text">
                                                 <strong>{{ $user->fullname }}</strong><br>
-                                                <small class="text-muted">@{{ $user->username }}</small>
+                                                <small class="text-muted">@‌{{ $user->username }}</small>
                                             </p>
                                             @if($user->telegram_username)
                                                 <small class="text-muted">
                                                     <i class="fab fa-telegram mr-1"></i>
-                                                    @{{ $user->telegram_username }}
+                                                    @‌{{ $user->telegram_username }}
                                                 </small>
                                             @endif
                                         </div>
@@ -205,18 +205,18 @@
                                                 </div>
 
                                                 <div class="mt-3">
-                                                    <a href="" class="btn btn-outline-secondary btn-sm">
-                                                        <i class="fas fa-sync-alt mr-1"></i>
-                                                        {{ __('Refresh & Generate New Token') }}
-                                                    </a>
+{{--                                                    <a href="" class="btn btn-outline-secondary btn-sm">--}}
+{{--                                                        <i class="fas fa-sync-alt mr-1"></i>--}}
+{{--                                                        {{ __('Refresh & Generate New Token') }}--}}
+{{--                                                    </a>--}}
 
-{{--                                                    <form method="POST" action="{{ route('telegram.regenerate-token') }}" class="d-inline">--}}
-{{--                                                        @csrf--}}
-{{--                                                        <button type="submit" class="btn btn-outline-secondary btn-sm">--}}
-{{--                                                            <i class="fas fa-sync-alt mr-1"></i>--}}
-{{--                                                            {{ __('Generate New Token') }}--}}
-{{--                                                        </button>--}}
-{{--                                                    </form>--}}
+                                                    <form method="POST" action="{{ route('telegram.regenerate-token') }}" class="d-inline">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-outline-secondary btn-sm">
+                                                            <i class="fas fa-sync-alt mr-1"></i>
+                                                            {{ __('Generate New Token') }}
+                                                        </button>
+                                                    </form>
                                                 </div>
                                             @else
                                                 <div class="alert alert-warning">

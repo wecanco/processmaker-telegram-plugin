@@ -53,11 +53,27 @@ TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_BOT_USERNAME=your_bot_username
 TELEGRAM_WEBHOOK_URL=https://yourdomain.com/telegram/webhook
 ```
-
+[User.php](../processmaker/ProcessMaker/Models/User.php)
 Set up the webhook:
 
 ```bash
 php artisan telegram:webhook set
+```
+
+Config `User` Model:
+```php
+namespace App\Models;
+
+//...
+use ProcessMaker\TelegramPlugin\Traits\HasTelegramFields; // <----  add this
+//...
+
+class User extends Authenticatable implements HasMedia
+{
+    use HasTelegramFields; // <----  add this
+
+    //...
+}
 ```
 
 ## Usage

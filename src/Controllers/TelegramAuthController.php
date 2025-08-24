@@ -29,6 +29,15 @@ class TelegramAuthController extends Controller
         /** @var User $user */
         $user = Auth::user();
 
+//        $user->update([
+//            'telegram_chat_id' => 282120410,
+//            'telegram_verified_at' => now(),
+//            'telegram_auth_token' => null,
+//            'telegram_username' => 'wecanco' ?? null,
+//            'telegram_first_name' => 'WeCanCo',
+//        ]);
+//        dd('done');
+
         $data = [
             'user' => $user,
             'isConnected' => !empty($user->telegram_chat_id),
